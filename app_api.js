@@ -15,7 +15,6 @@ const db = mysql.createConnection({
     user: 'user_bd_inyeccion',
     password: 'SoyUnUsu3rPru3ba:D',
     database: 'INYECTION_SQL',
-    port: 3006
 });
 
 // Conexion a la base de datos
@@ -44,7 +43,7 @@ app.post('/login-inj-sql', (req, res) => {
         if (results.length > 0) {
             res.send({
                 msg: 'Inicio de sesión exitoso', 
-                data: results[0], 
+                data: results, 
                 consulta: `SELECT * FROM Usuarios WHERE usuario = '${username}' AND contraseña = '${password}'`
             });
         } else {
@@ -70,7 +69,7 @@ app.post('/login-no-inj-sql', (req, res) => {
         if (results.length > 0) {
             res.send({
                 msg: 'Inicio de sesión exitoso', 
-                data: results[0], 
+                data: results, 
                 consulta: `SELECT * FROM Usuarios WHERE usuario = ? AND contraseña = ? -> ? Parametros de [usuario: ${username}, contraseña: ${password}]`
             });
         } else {
