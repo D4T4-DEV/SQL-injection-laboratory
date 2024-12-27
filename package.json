@@ -1,0 +1,26 @@
+{
+  "name": "sql-injection",
+  "version": "1.0.0",
+  "main": "app_api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node app_api.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/D4T4-DEV/SQL-injection.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/D4T4-DEV/SQL-injection/issues"
+  },
+  "homepage": "https://github.com/D4T4-DEV/SQL-injection#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2",
+    "mysql2": "^3.12.0"
+  }
+}
