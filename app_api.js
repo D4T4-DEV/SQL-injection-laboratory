@@ -8,7 +8,6 @@ const app = express();
 app.use(express.urlencoded({ extended: true })); // Aceptar Cadenas o arreglos
 app.use(express.json()); // Entender datos en Formato JSON
 
-
 // Cadena de conexion
 const db = mysql.createConnection({
     host: 'localhost',
@@ -29,8 +28,15 @@ db.connect((err) => {
 // ENDPOINT DE LOGIN (Vulnerable)
 app.post('/login-inj-sql', (req, res) => {
     const { username, password } = req.body;
+    
+    // Comprobación que se envien los datos
+    if(!username || !password){
+        res.status(400).send('Los campos usuario y contraseña son obligatorios');
+        console.error('No se enviaron los datos completos "CAMPOS REQUERIDOS"');
+        return;
+    }
 
-    // Consulta vulnerable a SQL Injection
+    // Consulta vulnerable a SQL Injection (no parametrizada)
     const query = `SELECT * FROM Usuarios WHERE usuario = '${username}' AND contraseña = '${password}'`;
 
     db.query(query, (err, results) => {
@@ -56,7 +62,14 @@ app.post('/login-inj-sql', (req, res) => {
 app.post('/login-no-inj-sql', (req, res) => {
     const { username, password } = req.body;
 
-    // Consulta vulnerable a SQL Injection
+    // Comprobación que se envien los datos
+    if(!username || !password){
+        res.status(400).send('Los campos usuario y contraseña son obligatorios');
+        console.error('No se enviaron los datos completos "CAMPOS REQUERIDOS"');
+        return;
+    }
+
+    // Consulta no vulnerable a SQL Injection (parametrizada)
     const query = 'SELECT * FROM Usuarios WHERE usuario = ? AND contraseña = ?';
 
     db.query(query, [username, password], (err, results) => {
