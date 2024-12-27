@@ -2,7 +2,7 @@
 Se utilizo node.js con express para crear una api rapida, en donde
 se plantea usar las inyecciones sql comunes para vulnerar un "login" en base a un endpoint simulado
 
-### La inyección usada para prueba (mas cómun)
+### La inyección usada para prueba (más cómun)
 `' OR '1'='1' -- `, aunado a que para ser descriptivo la api devolvera:
 ```
 {
