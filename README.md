@@ -23,3 +23,8 @@ Se uso postman para hacer las pruebas teniendo lo siguiente:
     "password": "password123" // Contraseña guardada
   }
   ```
+
+### Aspectos importantes:
+- Al clonar el repo es importante hacer un `npm i` ya que este funciona con node.js
+- Debes tener mysql community server instalado y corriendo, ya que necesitaras crear la base de datos que esta en el repositorio
+- La instancia de conexión en el archivo de la API debes cambiarlo a tu usuario y contraseña del servidor de mysql o bien crear un usuario con dichos parametros
