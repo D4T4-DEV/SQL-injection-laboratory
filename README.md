@@ -2,7 +2,7 @@
 Se utilizo node.js con express para crear una api rapida, en donde
 se plantea usar las inyecciones sql comunes para vulnerar un "login" en base a un endpoint simulado
 
-### La inyección usada fue 
+### La inyección usada para prueba (mas cómun)
 `' OR '1'='1' -- `, aunado a que para ser descriptivo la api devolvera:
 ```
 {
@@ -30,5 +30,5 @@ Se uso postman para hacer las pruebas teniendo lo siguiente:
 - La instancia de conexión en el archivo de la API debes cambiarlo a tu usuario y contraseña del servidor de mysql o bien crear un usuario con dichos parametros
 
 # IMPORTANTE
-Esto se da con fines academicos, se establece que al usar alguna inyección SQL en entornos no controlados o laboratorios, este repositorio estará absuelto de las consecuencias o implicaciones que puedan atribuirse a la ejecución. Por lo que ES CIEN PORCIENTO EDUCACIONAL. 
+Esto se da con fines academicos, se establece que al usar alguna inyección SQL en entornos no controlados o laboratorios, este repositorio estará absuelto de las consecuencias o implicaciones que puedan atribuirse a la ejecución. Por lo que ES CIEN PORCIENTO EDUCACIONAL. No se debe de usar en entornos no controlados u bien que no se tenga el concentimiento de la institución dado los daños y perjuicios que pudiesen pasar.
 
